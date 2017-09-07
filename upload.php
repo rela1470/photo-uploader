@@ -55,14 +55,14 @@ function rotate($image, array $exif)
             imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 6 : //ROTATE 90
-            $image = imagerotate($image,90, 0);
+            $image = imagerotate($image,270, 0);
             break;
         case 7 : //ROTATE 90 FLIP_HORIZONTAL
             $image = imagerotate($image,90, 0);
             imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 8 : //ROTATE 270
-            $image = imagerotate($image,270, 0);
+            $image = imagerotate($image,90, 0);
             break;
     }
     return $image;
