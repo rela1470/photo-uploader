@@ -89,6 +89,8 @@ function save($image, string $outputName, int $fileType)
             break;
 
     }
+
+    imagedestroy($image);
 }
 
 main();
