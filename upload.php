@@ -42,13 +42,13 @@ function rotate($image, array $exif)
         case 1 : //no rotate
             break;
         case 2 : //FLIP_HORIZONTAL
-            $image = imageflip($image, IMG_FLIP_HORIZONTAL);
+            imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 3 : //ROTATE 180
-            imagerotate($image,180, 0);
+            $image = imagerotate($image,180, 0);
             break;
         case 4 : //FLIP_VERTICAL
-            $image = imageflip($image, IMG_FLIP_VERTICAL);
+            imageflip($image, IMG_FLIP_VERTICAL);
             break;
         case 5 : //ROTATE 270 FLIP_HORIZONTAL
             $image = imagerotate($image,270, 0);
