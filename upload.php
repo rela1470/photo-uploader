@@ -45,24 +45,24 @@ function rotate($image, array $exif)
             imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 3 : //ROTATE 180
-            imagerotate($image,180, 0);
+            $image = imagerotate($image,180, 0);
             break;
         case 4 : //FLIP_VERTICAL
             imageflip($image, IMG_FLIP_VERTICAL);
             break;
         case 5 : //ROTATE 270 FLIP_HORIZONTAL
-            imagerotate($image,270, 0);
+            $image = imagerotate($image,270, 0);
             imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 6 : //ROTATE 90
-            imagerotate($image,90, 0);
+            $image = imagerotate($image,270, 0);
             break;
         case 7 : //ROTATE 90 FLIP_HORIZONTAL
-            imagerotate($image,90, 0);
+            $image = imagerotate($image,90, 0);
             imageflip($image, IMG_FLIP_HORIZONTAL);
             break;
         case 8 : //ROTATE 270
-            imagerotate($image,270, 0);
+            $image = imagerotate($image,90, 0);
             break;
     }
     return $image;
@@ -89,6 +89,8 @@ function save($image, string $outputName, int $fileType)
             break;
 
     }
+
+    imagedestroy($image);
 }
 
 main();
