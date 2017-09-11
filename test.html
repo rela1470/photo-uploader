@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>  
-        <title>PHP - Multiple Image upload using dropzone.js</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/basic.min.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>viewer</title>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/woocommerce/FlexSlider/2.6.4/jquery.flexslider-min.js"></script>
+
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/woocommerce/FlexSlider/2.6.4/flexslider.css">
+
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+        });
+    </script>
+
+    <style>
+        .photo {
+            width: auto !important;
+            height: 90vh !important;
+        }
+    </style>
+
 </head>
 <body>
-
-<div class="container">
-        <div class="row">
-                <div class="col-md-12">
-                        <h2>PHP - Multiple Image upload using dropzone.js</h2>
-                        <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="image-upload">
-                                <div>
-                                </div>
-                        </form>
-                </div>
+    <div class="container">
+        <div class="col-md-10">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li id="2017-09-11-20-12-34-904094">
+                        <img src="uploads/2017-09-11-20-12-34-904094.jpeg" class="photo img-responsive center-block">
+                    </li>
+                    <li id="2017-09-11-20-12-35-692996">
+                        <img src="uploads/2017-09-11-20-12-35-692996.jpeg" class="photo img-responsive center-block">
+                    </li>
+                </ul>
+            </div>
         </div>
-</div>
-
-<script type="text/javascript">
-        Dropzone.options.imageUpload = {
-        maxFilesize:20,
-        acceptedFiles: ".jpeg,.jpg,.png,.gif",
-        dictDefaultMessage:"<h3>タップで写真アップロード(複数枚OK)</h3>"
-    };
-</script>
-
+        <div class="col-md-2">
+            http://photo.rela.red/
+        </div>
+    </div>
 </body>
 </html>
