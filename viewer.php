@@ -9,6 +9,8 @@ require_once('config.php');
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>viewer</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="//cdn.rawgit.com/malsup/cycle2/master/build/jquery.cycle2.js"></script>
@@ -31,7 +33,7 @@ require_once('config.php');
                     console.log('date_time:', date_time);
                     $.each(data, function(index, value) {
                         console.log('load: ' + index + value);
-                        $('#slideshow').cycle('add', '<img id="' + index + '" src="' + value + '" class="photo">');
+                        $('#slideshow').cycle('add', '<img id="' + index + '" src="' + value + '" class="img-responsive">');
                         date_time = index;
                     });
                     console.log('date_time:', date_time);
@@ -72,15 +74,12 @@ require_once('config.php');
             -o-background-size: cover;
             background-size: cover;
         }
-        .photo {
-            height: 90vh !important;
-        }
     </style>
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="navbar">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><?= $url; ?> 素敵な写真のアップロードをよろしくお願い致します!</a>
@@ -88,7 +87,7 @@ require_once('config.php');
     </div>
 </nav>
 
-<div class="text-center">
+<div class="container">
     <div
             id="slideshow"
             class="cycle-slideshow"
@@ -98,7 +97,7 @@ require_once('config.php');
             data-cycle-caption="#caption"
             data-cycle-caption-template="{{slideCount}}枚受信">
 
-        <img src="start.jpg" class="photo">
+        <img src="start.jpg" class="img-responsive">
     </div>
 </div>
 <div id="caption" class="col-sm-6 text-left">初期化中...</div>
