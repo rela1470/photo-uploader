@@ -1,6 +1,7 @@
 <?php
 /**
  * POSTされた画像を回転して保存
+ * ファイル名:Y-m-d-H-i-s-u.{fileType}
  */
 
 
@@ -9,6 +10,8 @@
  */
 function main ()
 {
+    $time = new DateTime();
+
     $uploadDirName = 'uploads';
     if ($_FILES['file']['tmp_name'] ?? '') {
         $inputName = $_FILES['file']['tmp_name'];
@@ -17,7 +20,7 @@ function main ()
         $exif = @exif_read_data($inputName); //EXIF無かったらエラーになる
         $exif = $exif ? $exif : [];
 
-        $outputName = $uploadDirName . DIRECTORY_SEPARATOR . uniqid(date('Y-m-d-H-i-s')) . image_type_to_extension($fileType);
+        $outputName = $uploadDirName . DIRECTORY_SEPARATOR . $time->format('Y-m-d-H-i-s-u') . image_type_to_extension($fileType);
 
         $image = imagecreatefromstring(file_get_contents($inputName));
         if (! $image) exit('image create error');
