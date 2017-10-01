@@ -88,7 +88,7 @@ require_once('config.php');
     </div>
 </nav>
 
-<div class="text-center">
+<div class="text-center" style="margin: 10px 10px 10px 10px;">
     <div
             id="slideshow"
             class="cycle-slideshow"
