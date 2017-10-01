@@ -33,6 +33,7 @@
                     <div class="col-md-12 text-center">
                         <h1 class="text-inverse">素敵な写真を送って下さい!</h1>
                         <form action="upload.php" enctype="multipart/form-data" class="dropzone" id="image-upload"></form>
+                        <a href="./" class="btn btn-success btn-lg btn-block">更新</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +43,7 @@
         Dropzone.options.imageUpload = {
         maxFilesize:20,
         acceptedFiles: ".jpeg,.jpg,.png,.gif",
-        dictDefaultMessage:"<h3>タップで写真アップロード(複数枚OK)</h3>"
+        dictDefaultMessage:"<h2>タップで写真アップロード</h2><h3>.jpg .png .gif 複数枚OK</h3>"
     };
 </script>
 </body></html>
