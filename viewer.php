@@ -66,7 +66,7 @@ require_once('config.php');
 
     <style>
         body {
-            background: url('//unsplash.imgix.net/photo-1418065460487-3e41a6c84dc5?q=25&amp;fm=jpg&amp;s=127f3a3ccf4356b7f79594e05f6c840e') no-repeat center center fixed;
+            background: url('bg_qr.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
